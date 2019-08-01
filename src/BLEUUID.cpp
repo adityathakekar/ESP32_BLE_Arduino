@@ -116,7 +116,7 @@ BLEUUID::BLEUUID(std::string value) {
 			
 			if(MSB > '9') MSB -= 7; 
 			if(LSB > '9') LSB -= 7;
-			m_uuid.uuid.uuid128[15-n++] = ((MSB&0x0F) <<4) | (LSB & 0x0F);
+			m_uuid.uuid.uuid128[n++] = ((MSB&0x0F) <<4) | (LSB & 0x0F); //( 15- n++) = reversed the uuid for the ibeacon
 			i+=2;	
 		}
 	}
